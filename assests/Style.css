@@ -1,0 +1,22 @@
+body {
+    background-color: bisque;
+    font-family: bai jamuree;
+}
+
+#container {
+    display: flex;
+}
+
+.cartao {
+    margin: 1 rem 1 rem;
+    background-color: aqua;
+    height: 20 rem;
+    flex-grow: 1;
+    flex basis: calc(33%-6 rem);
+
+}
+
+.cartao_conteudo {
+    text-align: center;
+    height: 100%;
+}
