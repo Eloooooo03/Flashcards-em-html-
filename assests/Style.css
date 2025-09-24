@@ -45,3 +45,26 @@ footer p{
     font-size: 0.6;
     margin-top:0.5rem;
 }
+:croot{
+        --text-color#DBE4E;
+    --card-front-color:#144480;
+    --card-back-color:#00f4BF;
+}
+.cartao_conteudo_pegunta p{
+    color:var(--text-color);
+    font-weight: 500;
+}
+.cartao_conteudo_resposta p{
+    color:var(--card-back-color);
+    font-weight: 700;
+
+.cartao_conteudo_pegunta
+.cartao_conteudo_resposta
+backface-visibility:hidden;
+position:absolute;
+height:100%;
+width:100%;
+}
+.cartao_conteudo_resposta{
+    transform: rotateY('180deg');
+}
