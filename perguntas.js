@@ -11,4 +11,9 @@ Criacartao(
 Criacartao(
     'programaçao'
     'oque e uma funcao'
-   'uma função é um  bloco que executa alguma tarefa')
+   'uma função é um  bloco que executa alguma tarefa'
+)
+Criacartao('lingua inglesa'
+'como se diz oi em ingles'
+'oi em ingles e hi(RAI)'
+)
