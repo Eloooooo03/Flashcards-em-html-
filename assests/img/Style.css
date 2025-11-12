@@ -6,7 +6,7 @@
 
 body {
     background: url('img/bg-desktop.webp');
-    font-family: Bai Jamjuree;
+    font-family: 'Bai Jamjuree', sans-serif;
 }
 
 #container {
@@ -27,10 +27,10 @@ body {
 .cartao__conteudo {
     background-color: var(--card-front-color);
     text-align: center;
-    /* background-color: aquamarine; */
     height: 100%;
     transform-style: preserve-3d;
     transition: transform 300ms ease-in-out;
+    position: relative; /* necessário para backface-visibility funcionar corretamente */
 }
 
 .cartao__conteudo h3 {
@@ -46,9 +46,8 @@ body {
 }
 
 .cartao__conteudo p {
-    margin-top: 1rem;
-    padding: 2rem;
     margin-top: 4rem;
+    padding: 2rem;
     font-size: 1.4vw;
 }
 
@@ -99,11 +98,12 @@ footer p {
 @media (max-width: 560px) {
     
     body {
-        background: url('img/bg-mobile.webp'), no-repeat cover;
+        background: url('img/bg-mobile.webp') no-repeat;
+        background-size: cover;
     }
 
     .cartao {
-        flex: 1 0 calc(100% - 1rem)
+        flex: 1 0 calc(100% - 1rem);
     }
 
     .cartao__conteudo h3 {
