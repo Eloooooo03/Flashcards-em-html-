@@ -1,36 +1,40 @@
 function criaCartao(categoria, pergunta, resposta) {
-    const container = document.getElementById('container');
-    const cartao = document.createElement('article');
+    let container = document.getElementById('container');
+    let cartao = document.createElement('article');
     cartao.className = 'cartao';
 
-    cartao.innerHTML = `
-    <div class="cartao__conteudo" tabindex="0" role="button" aria-pressed="false" aria-label="Cartão de categoria ${categoria}">
-        <h3>${categoria}</h3>
-        <div class="cartao__conteudo__pergunta">
-            <p>${pergunta}</p>
-        </div>
-        <div class="cartao__conteudo__resposta">
-            <p>${resposta}</p>
-        </div>
-    </div>
-    `;
+    let conteudo = document.createElement('div');
+    conteudo.className = 'cartao__conteudo';
+    
+    let h3 = document.createElement('h3');
+    h3.textContent = categoria;
+
+    let perguntaDiv = document.createElement('div');
+    perguntaDiv.className = 'cartao__conteudo__pergunta';
+    let perguntaP = document.createElement('p');
+    perguntaP.textContent = pergunta;
+    perguntaDiv.appendChild(perguntaP);
+
+    let respostaDiv = document.createElement('div');
+    respostaDiv.className = 'cartao__conteudo__resposta';
+    let respostaP = document.createElement('p');
+    respostaP.textContent = resposta;
+    respostaDiv.appendChild(respostaP);
+
+    conteudo.appendChild(h3);
+    conteudo.appendChild(perguntaDiv);
+    conteudo.appendChild(respostaDiv);
+
+    cartao.appendChild(conteudo);
 
     let respostaEstaVisivel = false;
 
     function viraCartao() {
         respostaEstaVisivel = !respostaEstaVisivel;
         cartao.classList.toggle('active', respostaEstaVisivel);
-        const conteudo = cartao.querySelector('.cartao__conteudo');
-        conteudo.setAttribute('aria-pressed', respostaEstaVisivel.toString());
     }
 
-    cartao.addEventListener('click', viraCartao)
-    cartao.addEventListener('keydown', (event) => {
-        if (event.key === 'Enter' || event.key === ' ') {
-            event.preventDefault();
-            viraCartao();
-        }
-    });
+    cartao.addEventListener('click', viraCartao);
 
     container.appendChild(cartao);
 }
